@@ -1,0 +1,285 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.all{
+	position: relative;
+	width: 100%;
+	height:auto;
+}
+
+/*顶部功能条*/
+.top {
+	width: 100%;
+	height: 28px;
+	background-color: #444;
+}
+
+.top_width {
+	width:52.6%;
+	height: 28px;
+	margin: auto;
+}
+
+.top_left {
+	line-height: 28px;
+	font-size: 12px;
+}
+
+.top_nav,
+b,
+.top_phone,
+.current {
+	text-decoration: none;
+	color: #EFEFEF;
+}
+
+
+/*主要内容*/
+
+.main {
+	width: 100%;
+	/*z-index:-2;*/
+}
+/*导航*/
+
+.menu {
+	width:100%;
+	height: 50px;
+	background-color: #1F1F1F;
+	z-index: 1;
+}
+
+.menu_width {
+	width: 1000px;
+	height: 50px;
+	background-color: #1F1F1F;
+	margin: 0 auto;
+	z-index: 2;
+}
+
+
+/*导航左侧*/
+
+.menu_logo {
+	float: left;
+	width:200px;
+}
+
+.menu_logo a {
+	display: block;
+	text-decoration: none;
+	height: 50px;
+}
+
+.menu_logo a span {
+	font-size: 25px;
+	color: #EFEFEF;
+	margin-left: 5px;
+	line-height: 50px;
+	/*垂直居中*/
+	padding-left: 10px;
+}
+
+
+/*导航-中部*/
+
+.menu_list {
+	float: left;
+	width:440px ;
+	margin-left: 40px;
+}
+.menu_list li {
+	width: 110px;
+	list-style: none;
+	display: inline;
+	float: left;
+}
+
+ul.menu_list li a {
+	position: relative;
+	width: 100%;
+	display: block;	/*块级元素*/
+	height: 49px;
+	cursor: pointer;
+	margin-right: 1px;
+}
+
+ul.menu_list li a span {
+	position: absolute;
+	float: left;
+	display: inline;
+ left: 50%;
+ transform: translate(-50%);
+	font-size: 15px;
+	line-height: 49px;
+}
+
+ul.menu_list li a:hover,
+.middle_text a:hover {
+	color: #5ab17a;
+	/*border-bottom-color: #57b382;/*设置元素下边框的颜色*/*/
+}
+
+
+/*导航-右侧*/
+
+.search {
+	float: right;
+	margin-top: 14px;
+	border: 1px solid #d3d3d3;
+}
+
+.search input {
+	height: 22px;
+	border: none;
+	border-right: 1px solid #d3d3d3;
+	vertical-align: middle;
+	float: left;
+}
+
+.search .btn {
+	float: right;
+	background-color: #fff;
+	height: 22px;
+	width: 22px;
+	text-align: center;
+}
+
+.search img {
+	vertical-align: middle;
+	margin-top: -3px;
+}
+/*轮播图*/
+
+.main_top {
+	width: 100%;
+	height: 460px;
+	/*border: 3px solid #333;*/
+	overflow: hidden;
+	position: relative;
+		margin-bottom: 15px;
+}
+
+#list {
+	width: 9660px;
+	height: 460px;
+	position: absolute;
+	z-index: 1;
+}
+
+#list img {
+	width: 1380px;
+	height: 460px;
+	float: left;
+}
+
+#buttons {
+	position: absolute;
+	height: 10px;
+	width: 100px;
+	z-index: 2;
+	bottom: 20px;
+ left: 50%;
+ /*移动该元素宽度的一半，保持水平居中*/
+ transform: translate(-50%)
+}
+
+#buttons span {
+	cursor: pointer;
+	float: left;
+	border: 1px solid #fff;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #333;
+	margin-right: 5px;
+}
+
+#buttons .on {
+	background: #5ab17a;
+}
+
+.arrow {
+	cursor: pointer;
+	display: none;
+	line-height: 39px;
+	text-align: center;
+	font-size: 36px;
+	font-weight: bold;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	z-index: 6;
+	top: 180px;
+	background-color: RGBA(0, 0, 0, .3);
+	color: #fff;
+}
+
+.arrow:hover {
+	background-color: RGBA(0, 0, 0, .7);
+}
+
+#main_top:hover .arrow {
+	display: block;
+}
+
+#prev {
+	left: 20px;
+}
+
+#next {
+	right: 20px;
+}
+
+/*echarts图*/
+.main_middle {
+	width:1350px;
+	height: 650px;
+	margin: 0 auto;
+	background-color: rgb(237, 248, 233);
+	/*设置背景为浅绿色*/
+	padding-top: 50px;
+}
+
+.middle_text {
+	position: absolute;
+	width: 400px;
+	line-height: 20px;
+	left: 50%;
+ /*移动该元素宽度的一半，保持水平居中*/
+ transform: translate(-50%);
+ z-index: 2;
+}
+
+.middle_text a {
+	padding-left: 100px;
+	display: block;
+	cursor: pointer;
+	color: rgb(0, 90, 50);
+}
+
+#container1 {
+		position: absolute;
+		left: 50%;
+ /*移动该元素宽度的一半，保持水平居中*/
+ transform: translate(-50%);
+ margin-top:90px;
+}
+
+#container2,
+#container3 {
+	display: none;
+}
+
+#container1,
+#container2,
+#container3 {
+	/*	margin-right: 10px;*/
+	border-radius: 30px !important;
+	background-color: rgb(199, 233, 192) !important;
+	/*background: -webkit-linear-gradient(bottom,#1F1F1F,#444)!important;/*safari*/
+	/*background: -o-linear-gradient(bottom,#1F1F1F,#444)!important;/*opera*/
+	/*background: -moz-linear-gradient(bottom,#1F1F1F,#444)!important;/*火狐*/
+	/* background: linear-gradient(bottom,#1F1F1F,#444)!important;*/
+}

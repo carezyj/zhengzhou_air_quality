@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"content="width=device-width, initial-scale=1"/>
+		<title>绿色郑州</title>
+		<link type="text/css" rel="stylesheet" href="css/lvsezhengzhou1.css"/>
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	 <script src="js/echarts.js"></script>
+	 <script type="text/javascript" src="js/example2-lunbo.js"></script>
+ <script type="text/javascript" src="js/example2-echarts.js"></script>	
+	</head>
+	<body>
+		<div class="all">
+		<!--顶部功能条-->
+		<div class="top">
+			<div class="top_width">
+			<div class="top_left">
+				<a class="top_nav" href >网站导航</a>
+				<b>|</b>
+				<a class="top_phone" href="#">移动版</a>
+			</div><!--top_left结束-->
+			<div class="top_right"></div><!--top_right结束-->
+			</div><!--top_width结束-->
+		</div><!--top结束-->	
+  <!-- 主要内容--> 
+  <div class="main">
+  		<!--导航-->
+		<div class="menu">
+			<div class="menu_width">
+				<div class="menu_logo"><a class="menu_href" href="">
+					<span>郑州空气质量</span>
+				</a></div><!--menu_logo结束-->
+				
+				<ul class="menu_list">
+					<li class="menu_1">
+						<a class="current" href="">
+							<span>首页</span>
+						</a>
+					</li><!--menu_1结束-->
+					<li class="menu_2">
+						<a class="current" href="">
+							<span>排行榜</span>
+						</a>
+					</li><!--menu_2结束-->
+					<li class="menu_3">
+						<a class="current" href="">
+							<span>AQI预测</span>
+						</a>
+					</li><!--menu_3结束-->
+					<li class="menu_4">
+						<a class="current" href="">
+							<span>防范措施</span>
+						</a>
+					</li><!--menu_4结束	-->
+				</ul><!--menu_list结束-->
+	    <form class="search">
+     <input type="text" />
+     <div class="btn"><img src="./img/_search.png" alt=""></div>
+     </form>
+			</div><!--menu_width结束-->
+		</div><!--menu结束-->
+  	<div class="main_top" id="main_top">
+  		<div id="list" style="left: -1120px;">
+        <img src="img/a8ec8a13632762d0ab1e5799aaec08fa513dc6f0.jpg" alt='5'/>  	
+        <img src="img/060828381f30e9242406dc1946086e061d95f77c.jpg" alt="1"/>
+        <img src="img/38e8c00c42681ea33707a518b72f5f19.jpg" alt="2"/>
+        <img src="img/4f4569f293d2537aa7dfd8be8c112c49.jpg" alt="3"/>
+        <img src="img/6c8fb05a9b579de851ede910e92ee6a8.jpg" alt="4"/>
+        <img src="img/a8ec8a13632762d0ab1e5799aaec08fa513dc6f0.jpg" alt='5'/>
+        <img src="img/060828381f30e9242406dc1946086e061d95f77c.jpg" alt="1"/>
+    </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+  	</div><!--main_top结束-->
+  	<div class="main_middle">
+  		<div class="middle_text"><h1>2017郑州市空气质量柱状图</h1><br/><a>http://www.pm25.in/rank</a></div>
+  	<div id="container1" style="height:450px;width:970px;"></div>
+  	<div id="container2" style="height: 350px;width: 480px;"></div>
+  	<div id="container3" style="height: 350px;width: 480px;"></div>
+   </div>
+  </div><!--main结束-->
+  </div><!--all结束-->
+	</body>
+</html>
