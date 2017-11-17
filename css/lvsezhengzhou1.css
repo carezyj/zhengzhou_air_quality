@@ -146,8 +146,7 @@ ul.menu_list li a:hover,
 	/*border: 3px solid #333;*/
 	overflow: hidden;
 	position: relative;
-		margin-bottom: 15px;
-		background-color: rgb(102,194,164);
+		background-color: rgb(178,226,226);
 }
 
 #list {
@@ -226,9 +225,10 @@ ul.menu_list li a:hover,
  width:1350px;
 	min-height: 650px;
 	margin: 0 auto;
-	background-color: rgb(237, 248, 233);/*设置背景为浅绿色*/
+	background-color: rgb(237, 248, 251);/*设置背景为浅绿色*/
 	padding: 50px 20px 20px 20px;
 	line-height: 30px;
+	text-indent: 2em;
 }
 
 .middle_text {
@@ -266,7 +266,7 @@ ul.menu_list li a:hover,
 #container3 {
 	/*	margin-right: 10px;*/
 	border-radius: 30px !important;
-	background-color: rgb(199, 233, 192) !important;
+	background-color: rgb(178,226,226) !important;
 	/*background: -webkit-linear-gradient(bottom,#1F1F1F,#444)!important;/*safari*/
 	/*background: -o-linear-gradient(bottom,#1F1F1F,#444)!important;/*opera*/
 	/*background: -moz-linear-gradient(bottom,#1F1F1F,#444)!important;/*火狐*/
@@ -274,12 +274,8 @@ ul.menu_list li a:hover,
 }
 
 /*page2*/
-/*文字上方图片*/
-.bac_pic{
-	
-}
 /*文字*/
-.article_title{
-	margin: 0 auto;
-	text-align: center;
+.article_title,.place_mid{
+	 display:block;
+		text-align: center;
 }
