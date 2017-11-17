@@ -226,7 +226,7 @@ ul.menu_list li a:hover,
 	min-height: 650px;
 	margin: 0 auto;
 	background-color: rgb(237, 248, 251);/*设置背景为浅绿色*/
-	padding: 50px 20px 20px 20px;
+	padding: 10px 20px 20px 20px;
 	line-height: 30px;
 	text-indent: 2em;
 }
@@ -275,6 +275,13 @@ ul.menu_list li a:hover,
 
 /*page2*/
 /*文字*/
+.maintop_word{
+	margin: 120px 0px 0px 280px;
+	max-width: 900px;
+	height: 406px;
+ line-height: 40px;
+ text-indent:2em;
+}
 .article_title,.place_mid{
 	 display:block;
 		text-align: center;
