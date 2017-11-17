@@ -2,9 +2,121 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>郑州AQI</title>
+		<meta name="viewport"content="width=device-width, initial-scale=1"/>
+		<title>空气质量分析</title>
+		<link type="text/css" rel="stylesheet" href="css/lvsezhengzhou1.css"/>
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 	</head>
 	<body>
-		<p>郑州空气质量</P>	
+		<div class="all">
+		<!--顶部功能条 -->
+		<div class="top">
+			<div class="top_width">
+			<div class="top_left">
+				<a class="top_nav" href >网站导航</a>
+				<b>|</b>
+				<a class="top_phone" href="#">移动版</a>
+			</div><!--top_left结束-->
+			<div class="top_right"></div><!--top_right结束-->
+			</div><!--top_width结束-->
+		</div><!--top结束-->	
+  <!-- 主要内容--> 
+  <div class="main">
+  		<!--导航-->
+		<div class="menu">
+			<div class="menu_width">
+				<div class="menu_logo"><a class="menu_href" href="">
+					<span>郑州空气质量</span>
+				</a></div><!--menu_logo结束-->
+				
+				<ul class="menu_list">
+					<li class="menu_1">
+						<a class="current" href="">
+							<span>首页</span>
+						</a>
+					</li><!--menu_1结束-->
+					<li class="menu_2">
+						<a class="current" href="">
+							<span>排行榜</span>
+						</a>
+					</li><!--menu_2结束-->
+					<li class="menu_3">
+						<a class="current" href="">
+							<span>AQI预测</span>
+						</a>
+					</li><!--menu_3结束-->
+					<li class="menu_4">
+						<a class="current" href="">
+							<span>防范措施</span>
+						</a>
+					</li><!--menu_4结束	-->
+				</ul><!--menu_list结束-->
+			    <form class="search">
+				     <input type="text" />
+				     <div class="btn"><img src="./img/_search.png" alt=""></div>
+			     </form>
+			</div><!--menu_width结束-->
+		</div><!--menu结束-->
+	 <!--文字上方背景图-->
+  	<div class="main_top" id="main_top">  		
+
+   </div>
+  	</div><!--main_top结束-->
+  	<!--文字部分-->
+  	<div class="main_middle">
+  		<div class="article_title"><h1>郑州市2014-2017年大气污染特征分析</h1><br/></div>
+  	 <div class="article_body">
+  	 	<h2>摘要</h2>
+  	 	<p>2017年1月，国家发展改革委在《关于支持郑州建设国家中心城市的复函》中提出，推进郑州建设国家中心城市，相关意见中要求建设绿色低碳可持续发展城市。而近年来，郑州空气质量屡屡垫底，在全国74个重点城市中综合指数排名靠后。郑州又处在新型城镇化高速发展时期，污染问题势必严峻，那么行之有效的控制污染走可持续发展道路颇为重要。文中利用郑州市2014-2017年空气质量检测数据，对郑州市空气质量进行了研究分析，并做出趋势分析，为郑州市的合理规划提供科学依据。</p>
+  	  <p><strong>关键词：</strong>大气污染 PM2.5 数据分析 </p>
+  	  <h2>引论</h2>
+  	  <p>2017年1月，国家发展改革委在《关于支持郑州建设国家中心城市的复函》中提出，郑州为中原城市群核心城市。根据《促进中部地区崛起“十三五”规划》和《中原城市群发展规划》有关要求，推进郑州建设国家中心城市，有利于增强综合服务功能、引领中原城市群发展和支撑中部地区崛起。发展改革委在《关于支持郑州建设国家中心城市的指导意见》中要求：生态优先、文化传承，建设绿色低碳可持续发展城市，增强城市软实力，建设国际化现代都市，营造美丽宜居环境，构筑主城区绿色生活圈打造彰显绿城特色的生态网络。<br/>
+  	  目前，郑州市大气污染形势十分严峻，引起了不少学者的广泛关注。16年冬雾霾频频爆表引发全民关注。雾霾天气是一种大气污染状态，雾霾是对大气中各种悬浮颗粒物超标的笼统表述，尤其是PM2.5被认为是造成雾霾天气的“元凶”[1]。本文利用中国空气质量在线平台提供的郑州2013年12月份至2017年7月份逐日空气质量检测数据，对环境质量指数（AQI）和六种大气污染物（PM2.5，PM10，SO2，NO2，CO,O3）进行了分析概括，挖掘出隐藏在数据背后的关键信息。		
+  	  </p>
+  	  <h2>研究方法</h2>
+  	  <p>本课题研究方法：总体应用指标对比分析法，对数据进行横向、纵向及综合比较得出结论；深入数据内部应用分组分析法，把所研究的总体按照一个或几个标志划分为若干部分，加以整理，进行观察、分析，揭示其内在的联系和规律；为找出数据的动态发展规律应用时间序列及动态分析法，根据已编制好的时间序列，绘制曲线图，得到直观认知；空气质量状况是综合多因素的作用结果，应用综合评价分析法作出恰当评价[2]。以上方法的实现基于R，一款集统计分析与图形显示于一体的统计分析软件。</p>
+  	  <h2>研究内容</h2>
+  	  <h3><i>空气质量指数(AQI)研究</i></h3>
+  	  <p>空气质量等级分一到六级，对应类别：优，良，轻度污染，中度污染，重度污染，严重污染，对应图形配色从绿色到褐色逐渐加深。</p>
+  	  <img  src="img/pic1.jpg"/><img src="img/pic2.jpg" /><br />
+  	  <small>图1 郑州市2013年以来空气质量等级分布比例（左）和空气质量指数（AQI）随时间波动状况(右)<br />
+Figure1 Air quality grade distribution ratio and air quality index fluctuation with time in Zhengzhou since 2013
+</small>
+     <p>图1左侧饼图可以看出三年以来空气质量优良占比约为50%，其中良好天数占比最大，柱状图右侧可以看出存在极端天气值。图1右侧折线图可以看出极端值多出现在每年的12月份或一月份，且数据存在一定的季节规律[3]。</p>
+  	  <h3><i>主要大气污染物（PM2.5，PM10，O3）研究</i></h3>
+  	  <img src="img/pic3.jpg"/><br />
+  	  <small>图2  2013年12月份以来郑州市主要大气污染物（PM2.5,PM10）在空气中含量的季节均值<br />
+Figure2  Seasonal mean of the content of major atmospheric pollutants(pm2.5,pm10) in the air in Zhengzhou since 2017 December
+</small>
+  	  <p>图2明确展现出了PM2.5和PM10的季节性变化规律，冬季污染最为严重，其次是秋季和春季，夏季最轻。单看PM2.5，从年度变化角度来看，与2015年相比，2016年和2017年春夏两个季度的PM2.5均值降低了很多，春季降幅分别达到了29.8%和29.4%，夏季降幅更是达到了35.8%和30.9%。与2014年相比，2015年和2016年秋季的PM2.5均值降低了很多，降幅分别为21.9%和28.7%。冬季均值16年大幅增加，其余年份相对平稳（冬季在统计学意义上不显著）。在PM2.5的数据点上有一条整体回归线，可以看出PM2.5在空气中的含量随时间的推移整体呈下降趋势，也就说雾霾情况总体来说有所改善。
+		<br/>为了能更细致的描述郑州地区的空气污染状况，按中国空气质量等级划分标准将空气质量分为一般污染（PM2.5日均浓度介于75µg/m3和150µg/m3）和严重污染（大于150µg/m3）[4]。然后按年份和季节标度分析污染天数占比。
+</p>
+     <img src="img/pic4.jpg" /><img src="img/pic5.jpg" /><br />
+     <small>图3 优良空气、一般污染、严重污染过程在不同年份（数据完整年2014到2016）及不同季节所占的天数比例<br />
+Figure3 The proportion of good air,general pollution and severe pollution in different years and seasons(Year of full data from 2014 to 2016).
+</small>
+     <p> 图3左侧可看出，三年来，郑州优良空气天数约占52%，即约有一半时间人们处于污染状况中，其中，36%时间为一般污染，11%时间为严重污染；16年空气质量状况较前两年有所改善。<br/>
+	  右侧图可看出，夏季和冬季表现出很强的特性5]，夏季优良空气占比最大约为80%，严重污染比例几乎为0；冬季优良空气占比最小约为27%，而严重污染比例最大约为33%；秋季相比于春季严重污染比例更大。<br />
+	  综上所述，单就PM2.5而言，我们一年当中约有一半时间是处于污染当中，暴露在这样的天气中对我们身体会产生一定的伤害，平时要注意防范，特别是污染严重的冬季。<br />
+	  得益于环境治理力度的不断提升，近年来，细颗粒物浓度普遍有所下降，但臭氧（O3）却在不知不觉持续恶化。臭氧在常温下是一种有特殊臭味的淡蓝色气体，是一种强氧化剂，吸入呼吸道会导致肺功能减弱和组织损伤，臭氧还会破坏人体的免疫机能，臭氧超标对人体和动植物健康都有负面影响[6]。臭氧污染带有明显的季节性特点：
+</p>
+  	 <img src="img/pic6.jpg" /><br />
+  	 <small>图4  2013年12月份以来郑州市主要大气污染物（O3）在空气中含量的季节均值曲线图<br />
+Figure4  Seasonal mean of the content of major atmospheric pollutants(o3) in the air in Zhengzhou since 2017 December
+</small>
+    <p> 图4 有两个明显特征，首先，O3有明显的季节性特征，相反于霾的污染，O3含量往往在夏季达到峰值；其次，O3含量持续增长，增长势头迅猛，17年尤为严重，季均值均已超过国家标准（日最大八小时平均：一级100；2级160。单位：µg/m3）。<br />
+   最后通过热图简要分析一下六种污染物之间的关系：
+</p>
+    <img src="img/pic7.jpg" /><br />
+    <small>图5  郑州市六种大气污染物之间的相关关系<br />
+Figure5  The correlation between six kinds of atmospheric pollutants in Zhengzhou
+</small>
+     <p>热图蓝色代表负相关，红色代表正相关，而颜色的深浅代表相关性的大小，颜色越深相关性越强，从图5我们可以看出，O3和其余几个变量呈负相关，除O3外的变量之间呈正相关，其中PM2.5和PM10、CO 的正相关性较强，O3和SO2和CO的负相关性较强。所以防治雾霾要从防尘和控制CO排放为侧重点，而防治O3污染要以控制氮氧化物的排放为主。</p>
+  	 <h2>结论</h2>
+  	 <p>  综上所述，郑州的空气污染治理不仅关系到本地区的可持续发展，还关系到中原城市群的发展，支撑着中部地区的崛起。郑州市正处于城镇化高速发展时期，给环境治理造成了很大阻碍。在郑州市的规划和建设过程中，需要考虑污染物的时间和空间分布规律，在污染较为严重的时间段来临之前做好预防工作，不同季节主要大气污染物不同，所以要针对不同季节做出弹性化的污染治理方案。在人文意识方面我们要在全市范围内营造人人关心环境保护、人人重视环境保护的良好氛围。</p>
+  	 </div>
+   </div>
+  </div><!--main结束-->
+  </div><!--all结束-->
 	</body>
 </html>

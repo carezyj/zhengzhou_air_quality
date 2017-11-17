@@ -11,19 +11,20 @@
 /*顶部功能条*/
 .top {
 	width: 100%;
-	height: 28px;
+	height: 32px;
 	background-color: #444;
 }
 
 .top_width {
 	width:52.6%;
-	height: 28px;
+	height: 32px;
 	margin: auto;
 }
 
 .top_left {
-	line-height: 28px;
+	line-height: 32px;
 	font-size: 12px;
+	padding-left: 15px;
 }
 
 .top_nav,
@@ -45,14 +46,14 @@ b,
 
 .menu {
 	width:100%;
-	height: 50px;
+	height: 80px;
 	background-color: #1F1F1F;
 	z-index: 1;
 }
 
 .menu_width {
 	width: 1000px;
-	height: 50px;
+/*	height: 50px;*/
 	background-color: #1F1F1F;
 	margin: 0 auto;
 	z-index: 2;
@@ -69,14 +70,14 @@ b,
 .menu_logo a {
 	display: block;
 	text-decoration: none;
-	height: 50px;
+	height: 80px;
 }
 
 .menu_logo a span {
 	font-size: 25px;
 	color: #EFEFEF;
 	margin-left: 5px;
-	line-height: 50px;
+	line-height: 80px;
 	/*垂直居中*/
 	padding-left: 10px;
 }
@@ -97,39 +98,27 @@ b,
 }
 
 ul.menu_list li a {
+	height: 80px;
 	position: relative;
 	width: 100%;
 	display: block;	/*块级元素*/
-	height: 49px;
 	cursor: pointer;
 	margin-right: 1px;
+	text-align: center;
+	line-height: 80px;
 }
-
-ul.menu_list li a span {
-	position: absolute;
-	float: left;
-	display: inline;
- left: 50%;
- transform: translate(-50%);
-	font-size: 15px;
-	line-height: 49px;
-}
-
 ul.menu_list li a:hover,
 .middle_text a:hover {
 	color: #5ab17a;
 	/*border-bottom-color: #57b382;/*设置元素下边框的颜色*/*/
 }
 
-
 /*导航-右侧*/
-
 .search {
 	float: right;
-	margin-top: 14px;
+	margin-top: 27px;
 	border: 1px solid #d3d3d3;
 }
-
 .search input {
 	height: 22px;
 	border: none;
@@ -137,7 +126,6 @@ ul.menu_list li a:hover,
 	vertical-align: middle;
 	float: left;
 }
-
 .search .btn {
 	float: right;
 	background-color: #fff;
@@ -159,6 +147,7 @@ ul.menu_list li a:hover,
 	overflow: hidden;
 	position: relative;
 		margin-bottom: 15px;
+		background-color: rgb(102,194,164);
 }
 
 #list {
@@ -234,12 +223,12 @@ ul.menu_list li a:hover,
 
 /*echarts图*/
 .main_middle {
-	width:1350px;
-	height: 650px;
+ width:1350px;
+	min-height: 650px;
 	margin: 0 auto;
-	background-color: rgb(237, 248, 233);
-	/*设置背景为浅绿色*/
-	padding-top: 50px;
+	background-color: rgb(237, 248, 233);/*设置背景为浅绿色*/
+	padding: 50px 20px 20px 20px;
+	line-height: 30px;
 }
 
 .middle_text {
@@ -282,4 +271,15 @@ ul.menu_list li a:hover,
 	/*background: -o-linear-gradient(bottom,#1F1F1F,#444)!important;/*opera*/
 	/*background: -moz-linear-gradient(bottom,#1F1F1F,#444)!important;/*火狐*/
 	/* background: linear-gradient(bottom,#1F1F1F,#444)!important;*/
+}
+
+/*page2*/
+/*文字上方图片*/
+.bac_pic{
+	
+}
+/*文字*/
+.article_title{
+	margin: 0 auto;
+	text-align: center;
 }
