@@ -40,31 +40,32 @@
 					data:["优","良","轻度污染","中度污染","重度污染","严重污染"]
 				},
 				//直角坐标系在grid中的y轴
-				yAxis:{},
+				yAxis:{
+					name:'AQI天数（天）'
+				},
 				//系列列表
 				series:[{
 					name:'AQI天数',
 					type:'bar',
 					data:[2,69,84,28,23,6],
-				itemStyle:{
-						normal:{
-							color:function(params){
-								var colorList=['#00E400','#FFFF00','#FF7E00','#FF0000',
-								'#99004C','#4C0026'
-								];
-								return colorList[params.dataIndex]
+					barMaxWidth :'30%',
+					itemStyle:{
+							normal:{
+								color:function(params){
+									var colorList=['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3']
+									return colorList[params.dataIndex]
+								}
+								//color:'#c04346',//柱条颜色
+								//shadowBlur:200,//图形阴影模糊大小
+								//shadowOffsetX:0,//阴影水平方向上的偏移距离
+							//	shadowOffsetY:0,
+								//shadowColor:'rgba(0,0,0,0.5)'//阴影颜色
+							},
+							emphasis:{
+								shadowBlur:200,
+								shadowColor:'rgba(237,248,233,0.8)'
 							}
-							//color:'#c04346',//柱条颜色
-							//shadowBlur:200,//图形阴影模糊大小
-							//shadowOffsetX:0,//阴影水平方向上的偏移距离
-						//	shadowOffsetY:0,
-							//shadowColor:'rgba(0,0,0,0.5)'//阴影颜色
-						},
-						emphasis:{
-							shadowBlur:200,
-							shadowColor:'rgba(237,248,233,0.8)'
 						}
-					}
 				}],
 				//全局文本设置
 				textStyle:{
