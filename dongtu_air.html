@@ -40,8 +40,8 @@
 <p><input type="button" id="testBtn" value="暂停"></p>
 </body>
 </html>
-<!--js版-->
-<!--<script>
+<!--js版
+<script>
 	window.onload=function(){
 	var Love=document.getElementById("testImg");
 	    button=document.getElementById("testBtn");
@@ -61,17 +61,16 @@
 <!--jquery版-->
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script>
-	$(document).ready(function(){
-		var Love=$('#testImg'),
-		    button=$('#testBtn');
-		button.click(function(){
-			if($(this).val('暂停')){
-				Love.addClass('stop');
+	$(function(){
+		var $love=$('#testImg'),$button=$('#testBtn');
+		$button.on('click',function(){
+			if($(this).val()=='暂停'){
+				$love.addClass('stop');
 				$(this).val('播放');
 			}else{
-				Love.removeClass('stop');
+				$love.removeClass('stop');
 				$(this).val('暂停');
 			}
-		})
-	})
+		});
+	});
 </script>
