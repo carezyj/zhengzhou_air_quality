@@ -64,12 +64,14 @@
 	$(function(){
 		var $love=$('#testImg'),$button=$('#testBtn');
 		$button.on('click',function(){
-			if($(this).val()=='暂停'){
-				$love.addClass('stop');
-				$(this).val('播放');
-			}else{
-				$love.removeClass('stop');
-				$(this).val('暂停');
+			if($love.get(0).classList&&$love&&$button){
+				if($(this).val()=='暂停'){
+					$love.addClass('stop');
+					$(this).val('播放');
+				}else{
+					$love.removeClass('stop');
+					$(this).val('暂停');
+				}
 			}
 		});
 	});
