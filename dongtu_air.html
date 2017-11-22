@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3逐帧动画</title>
+    <style>
+    	    @keyframes move{
+    	0%{
+    		left: 0px;
+    	}
+    	100%{
+    		left:200px;
+    	}
+    }
+      @-webkit-keyframes move{
+    	0%{
+    		left: 0px;
+    	}
+    	100%{
+    		left:200px;
+    	}
+    }	
+    .love{
+        display: block;
+        position: relative;
+        width: 100px;height: 100px;
+        background: url(img/timg_02.png) 0 0 no-repeat ;
+        animation:move 3s infinite;
+        -webkit-animation:move 3s  infinite;
+    }
+    .stop{
+    	animation-play-state:paused;
+    }
+    
+
+    </style>
+</head>
+<body>
+<i id="testImg" class="love"></i>
+<p><input type="button" id="testBtn" value="暂停"></p>
+</body>
+</html>
+<!--js版-->
+<!--<script>
+	window.onload=function(){
+	var Love=document.getElementById("testImg");
+	    button=document.getElementById("testBtn");
+	    if(Love.classList&&Love&&button){
+	    	button.onclick=function(){
+	    		if(this.value=='暂停'){
+	    			Love.classList.add('stop');
+	    			this.value='播放';
+	    		}else{
+	    			Love.classList.remove('stop');
+	    			this.value='暂停';
+	    		}
+	    	}
+	    }
+	    }
+</script>-->
+<!--jquery版-->
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var Love=$('#testImg'),
+		    button=$('#testBtn');
+		button.click(function(){
+			if($(this).val('暂停')){
+				Love.addClass('stop');
+				$(this).val('播放');
+			}else{
+				Love.removeClass('stop');
+				$(this).val('暂停');
+			}
+		})
+	})
+</script>
