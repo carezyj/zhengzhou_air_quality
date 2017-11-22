@@ -64,8 +64,9 @@
 	$(document).ready(function(){
 		var Love=$('#testImg'),
 		    button=$('#testBtn');
+		    console.log(Love.length);
 		button.click(function(){
-			if($(this).val('暂停')){
+			if($(this).val()=='暂停'){
 				Love.addClass('stop');
 				$(this).val('播放');
 			}else{
