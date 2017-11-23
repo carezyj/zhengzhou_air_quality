@@ -383,11 +383,12 @@ transform:rotateY(360deg);
 	width: 900px;
 	height: 460px;
 	margin:0 auto;
+	overflow: hidden;
 }
 .zz_loc{
-	font-size: 20px;
+	font-size: 25px;
 	color:rgb(0,109,44) ;
-	margin: 50px 0px 50px 0px;
+	margin: 70px 0px 70px 5px;
 }
 .zz_aqi{
 	overflow: hidden;
@@ -408,3 +409,74 @@ transform:rotateY(360deg);
 		font-size: 14px;
 		margin-top:30px;
 }
+.maincontain_left{
+	float: left;
+	width: 300px;
+}
+.maincontain_right{
+	position: relative;
+	float: left;
+	margin-left: 20px;
+/* background-color: lightpink;*/
+}
+.static_img{
+	position: relative;
+	bottom: 0px;
+	width: 560px;
+	height: 460px;
+	background: url(../img/shanpo.png) 105% 140%/50% no-repeat,/*x y轴*/
+	            url(../img/cao.png)90% 103% repeat-x,
+	            url(../img/xiongmao1.png)0% 93% no-repeat;}
+.yunduo1{
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	top: 70px;
+	left:80px;
+/* background:navajowhite;*/
+ 	animation: yunduo1_move 5s ease-in-out infinite;
+	-webkit-animation: yunduo1_move 5s ease-in-out infinite;}
+.yunduo1_content{
+		position: absolute;
+	display: inline-block;
+	bottom: 0px;
+	left: 0px;
+	width:110px;
+	height: 110px;
+	background: url(../img/yunduo1.png)0 0 /100% no-repeat;}
+ @keyframes yunduo1_move{0%{top: 70px;}50%{top:75px}100%{top:70px;}}
+ @-webkit-keyframes yunduo1_move{0%{top: 70px;}50%{top:75px}100%{top:70px;}}	
+.yunduo2{
+	position: absolute;
+	width: 130px;
+	height: 130px;
+	top: 20px;
+	right:220px;
+/* background:navajowhite;*/
+ 	animation: yunduo2_move 5s ease-in-out infinite;
+	-webkit-animation: yunduo2_move 5s ease-in-out infinite;}
+.yunduo2_content{
+	position: absolute;
+	display: inline-block;
+	width:130px;
+	height: 130px;
+	background: url(../img/yunduo2.png) 0 0 /100% no-repeat;}
+ @keyframes yunduo2_move{0%{right: 220px;}50%{right:210px}100%{right:220px;}}
+ @-webkit-keyframes yunduo2_move{0%{right: 220px;}50%{right:210px}100%{right:220px;}}
+.yunduo3{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 100px;
+	right:20px;
+/* background:navajowhite;*/
+ 	animation: yunduo3_move 5s ease-in-out infinite;
+	-webkit-animation: yunduo3_move 5s ease-in-out infinite;}
+.yunduo3_content{
+	position: absolute;
+	display: inline-block;
+	width:100px;
+	height: 100px;
+	background: url(../img/yunduo3.png)0 0 /70% no-repeat;}
+ @keyframes yunduo3_move{0%{right: 20px;}50%{right:50px}100%{right:20px;}}
+ @-webkit-keyframes yunduo3_move{0%{right: 20px;}50%{right:50px}100%{right:20px;}}
