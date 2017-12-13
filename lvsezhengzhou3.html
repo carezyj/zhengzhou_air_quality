@@ -64,7 +64,7 @@
   				<h1>郑州</h1>
   			</div><!--zz_loc结束-->
   			<div class="zz_aqi">
-  				<a class="zz_aqi_num" href="">91</a>
+  				<a class="zz_aqi_num" href="" id="AQI">91</a>
   				<p class="zz_aqi_right">
   					<span class="zz_aqi_level">良</span><br />
   					<span class="zz_aqi_tip">AQI指数</span>
@@ -127,21 +127,23 @@
 				this.initWeather();
 			},
 			initWeather:function(){
-				$.ajax({
-				    //获取客户端 IP 和 归属地
-				    url: "http://wthrcdn.etouch.cn/WeatherApi?city=%E9%83%91%E5%B7%9E%E5%B8%82",
-				    dataType: "text",
-				    
-				    success: function (data) {
-				       // console.log(data)
-				        console.log($(data).find("fengxiang").get(1).innerHTML);
-				    }
-				});
+				setInterval(function(){
+					$.ajax({
+					    //获取客户端 IP 和 归属地
+					    url: "http://wthrcdn.etouch.cn/WeatherApi?city=%E9%83%91%E5%B7%9E%E5%B8%82",
+					    dataType: "text",
+					    
+					    success: function (data) {
+					       // console.log(data)
+					        $("#AQI").text($(data).find("environment aqi").get(0).innerText);
+					    }
+					});
+				},"3000");
+				
 			}
 		}
 	}();
 	$(function(){
-		console.log(111);
 		Weather.init();
 	});
 </script>
