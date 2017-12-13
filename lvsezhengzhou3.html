@@ -71,7 +71,7 @@
   				</p>
   			</div><!--zz_aqi结束-->
   			<div class="zz_pm">
-  				<p>PM2.5浓度：<span>62</span>微克/立方米</p><br />
+  				<p>PM2.5浓度：<span id="PM25"></span>微克/立方米</p><br />
   				<p>目前城市排名 264</p>
   			</div>
   			</div><!--maincontain_left结束-->
@@ -137,6 +137,7 @@
 					    success: function (data) {
 					       // console.log(data)
 					        $("#AQI").text($(data).find("environment aqi").get(0).innerText);
+					        $("#PM25").text($(data).find("environment pm25").get(0).innerText);
 					    }
 				});
 				
