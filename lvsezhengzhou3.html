@@ -61,7 +61,7 @@
   		<div class="maintop_contain" >
   			<div class="maincontain_left">
   			<div class="zz_loc">
-  				<h1>郑州</h1>
+  				<h1 id="cityName"></h1>
   			</div><!--zz_loc结束-->
   			<div class="zz_aqi">
   				<a class="zz_aqi_num" href="" id="AQI"></a>
@@ -122,23 +122,24 @@
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>
 	var Weather=function(){
+		var cityName="郑州市";
 		return {
 			init:function(){
 				var that=this;
-				this.initWeather();
-				setInterval(function(){that.initWeather();},3000);
+				this.initWeather(cityName);
+				setInterval(function(){that.initWeather(cityName);},3000);
 			},
-			initWeather:function(){
+			initWeather:function(cityName){
+				$("#cityName").text(cityName);
 				$.ajax({
-					    //获取客户端 IP 和 归属地
-					    url: "http://wthrcdn.etouch.cn/WeatherApi?city=%E9%83%91%E5%B7%9E%E5%B8%82",
-					    dataType: "text",
-					    
-					    success: function (data) {
-					       // console.log(data)
-					        $("#AQI").text($(data).find("environment aqi").get(0).innerText);
-					        $("#PM25").text($(data).find("environment pm25").get(0).innerText);
-					    }
+				    url: "http://wthrcdn.etouch.cn/WeatherApi?city="+encodeURI(cityName),
+				    dataType: "text",
+				    success: function (data) {
+				       // console.log(data)
+				       
+				        $("#AQI").text($(data).find("environment aqi").get(0).innerText);
+				        $("#PM25").text($(data).find("environment pm25").get(0).innerText);
+				    }
 				});
 				
 			}
