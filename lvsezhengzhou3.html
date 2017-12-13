@@ -120,3 +120,28 @@
 	</body>
 </html>
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	var Weather=function(){
+		return {
+			init:function(){
+				this.initWeather();
+			},
+			initWeather:function(){
+				$.ajax({
+				    //获取客户端 IP 和 归属地
+				    url: "http://wthrcdn.etouch.cn/WeatherApi?city=%E9%83%91%E5%B7%9E%E5%B8%82",
+				    dataType: "text",
+				    
+				    success: function (data) {
+				       // console.log(data)
+				        console.log($(data).find("fengxiang").get(1).innerHTML);
+				    }
+				});
+			}
+		}
+	}();
+	$(function(){
+		console.log(111);
+		Weather.init();
+	});
+</script>
