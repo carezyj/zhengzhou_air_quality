@@ -122,17 +122,15 @@
 							shadowOffsetY:0,
 							shadowColor:'rgba(0,0,0,0.5)'
 						},
-						emphasis:{
+							emphasis:{
 							shadowBlur:200,
-							shadowColor:'rgba(0,0,0,0.5)'
+							shadowColor:'rgba(237,248,233,0.8)'
 						}
 					}
 				}],
-   //改变全局背景色
-				backgroundColor:'#2c343c',
 				//全局文本设置
-				textStyle:{
-					color:'rgba(255,255,255,0.3)'
+	    textStyle:{
+					color:'rgba(0,0,0,0.6)'
 				},
 				//设置标签的视觉引导线颜色
 			 labelLine:{
@@ -150,7 +148,7 @@
 				title:{
 					text:'饼图',
 					textStyle:{
-						color:'rgba(255,255,255,1)',
+						color:'rgba(0,0,0,0.8)',
 						fontSize:16,
 						lineHeight:16
 					}
@@ -164,7 +162,7 @@
 					data:['良','轻度污染','中度污染','重度污染','严重污染','优'],//图例名称
 					padding:[30,0,0,20],
 					textStyle:{
-						color:'#fff',
+						color:'rgba(0,0,0,0.6)',
 						fontSize:10
 					}
 				},
@@ -195,22 +193,19 @@
 								'#99004C','#4C0026','#00E400'],
 					itemStyle:{
 						normal:{
-							shadowBlur:200,
-							shadowOffsetX:0,
-							shadowOffsetY:0,
-							shadowColor:'rgba(0,0,0,0.5)'
+							//shadowBlur:200,
+							//shadowOffsetX:0,
+							//shadowOffsetY:0,
+							//shadowColor:'rgba(0,0,0,0.5)'
 						},
-						emphasis:{
+							emphasis:{
 							shadowBlur:200,
-							shadowColor:'rgba(0,0,0,0.5)'
+							shadowColor:'rgba(237,248,233,0.8)'
 						}
 					}
 				}],
-   //改变全局背景色
-				backgroundColor:'#2c343c',
-				//全局文本设置
-				textStyle:{
-					color:'rgba(255,255,255,0.3)'
+	    textStyle:{
+					color:'rgba(0,0,0,0.6)'
 				},
 				//设置标签的视觉引导线颜色
 			 labelLine:{
