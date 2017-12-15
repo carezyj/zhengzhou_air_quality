@@ -234,12 +234,13 @@ ul.menu_list li a:hover,
 /*echarts图*/
 .main_middle {
  max-width:1350px;
-	min-height: 650px;
+	height: auto;
 	margin: 0 auto;
 	background-color: rgb(237, 248, 251);/*设置背景为浅绿色*/
 	padding: 10px 20px 20px 20px;
 	line-height: 30px;
 	text-indent: 2em;
+	overflow: hidden;
 }
 
 .middle_text {
@@ -259,17 +260,19 @@ ul.menu_list li a:hover,
 	color: rgb(0, 90, 50);
 }
 
-#container1 {
-		position: absolute;
-		left: 50%;
+#container1,#container2 {
+		/*position: absolute;
+		left: 50%;*/
  /*移动该元素宽度的一半，保持水平居中*/
- transform: translate(-50%);
- margin-top:90px;
+/* transform: translate(-50%);*/
+ margin:90px 20px 20px 20px;
+float: left;
 }
 
-#container2,
+
 #container3 {
-	display: none;
+	display: block;
+	float: left;
 }
 
 #container1,
@@ -389,6 +392,10 @@ transform:rotateY(360deg);
 	font-size: 25px;
 	color:rgb(0,109,44) ;
 	margin: 70px 0px 50px 5px;
+	line-height: 20px;
+}
+#data_upd{
+	font-size: 13px;
 }
 .zz_aqi{
 	overflow: hidden;
@@ -401,6 +408,7 @@ transform:rotateY(360deg);
 .zz_aqi_right{
 	float: left;
 	margin-top: 70px;
+	margin-left: 8px;
 	color:rgb(0,109,44);
 }
 .zz_pm{
@@ -408,6 +416,7 @@ transform:rotateY(360deg);
 		color:rgb(0,109,44);
 		font-size: 14px;
 		margin-top:30px;
+		margin-left: 13px;
 }
 .maincontain_left{
 	float: left;
@@ -433,7 +442,13 @@ transform:rotateY(360deg);
 	            url(../img/xiongmao1.png)0% 93% no-repeat;
  margin-left: 10px;
 }
-
+.wtr_container{
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+	color: rgb(237,248,251);
+	font-size: 12px;
+}
 .yunduo1{
 	position: absolute;
 	width: 120px;

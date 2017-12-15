@@ -35,12 +35,12 @@
 						</a>
 					</li><!--menu_1结束-->
 					<li class="menu_2">
-						<a class="current" href="">
-							<span>排行榜</span>
+						<a class="current" href="lvsezhengzhou3.html">
+							<span>实时监测</span>
 						</a>
 					</li><!--menu_2结束-->
 					<li class="menu_3">
-						<a class="current" href="">
+						<a class="current" href="lvsezhengzhou2.html">
 							<span>AQI预测</span>
 						</a>
 					</li><!--menu_3结束-->
@@ -61,25 +61,29 @@
   		<div class="maintop_contain" >
   			<div class="maincontain_left">
   			<div class="zz_loc">
-  				<h1 id="cityName"></h1>
+  				<p><h1 id="cityName"></h1><br />&nbsp<span id="data_upd">数据更新时间：<span id="time_ymd"> 					
+  				</span>&nbsp<span id="time_s"></span></span></p>
   			</div><!--zz_loc结束-->
   			<div class="zz_aqi">
   				<a class="zz_aqi_num" href="" id="AQI"></a>
   				<p class="zz_aqi_right">
   					<span id="zz_aqi_level"></span><br />
-  					<span class="zz_aqi_tip">AQI指数</span>
+  					<span class="zz_aqi_tip" >AQI指数</span>
   				</p>
   			</div><!--zz_aqi结束-->
   			<div class="zz_pm">
-  				<p>PM2.5浓度：<span id="PM25"></span>微克/立方米</p><br />
-  				<p><span id="pm25Exp"></span></p>
+  				<p>PM2.5浓度：<span id="PM25" style="font-size: 17px;"></span>微克/立方米</p><br />
+  				<p><span >建议：</span><span id="pm25Exp"></span></p>
   			</div>
   			</div><!--maincontain_left结束-->
   			<div class="maincontain_right">
-  				<div class="static_img"></div>
+  				<div class="static_img">
+  					<p class="wtr_container">天气：<span id="weather"></span><br />温度：
+  						<span id="heigh_wtr"></span>~<span id="low_wtr"></span></p>
+  				</div><!--static_img结束-->
   				<div class="yunduo1"><i class="yunduo1_content"></i></div>
   				<div class="yunduo2"><i class="yunduo2_content"></i></div>
-  				<div class="yunduo3"><i class="yunduo3_content"></i></div>
+  				<div class="yunduo3"><i class="yunduo3_content"></i></div>			
   			</div><!--maincontain_right结束-->
   		</div><!--maintop_contain结束-->
    </div><!--main_top结束-->
@@ -130,7 +134,7 @@
 					that.initWeather(cityName);
 				}
 				loop();
-				setInterval(loop,3000);//每隔三秒钟调用一次匿名函数
+				setInterval(loop,20000);//每隔三秒钟调用一次匿名函数
 			},
 			initWeather:function(cityName){	
 				$("#cityName").text(cityName);
@@ -143,6 +147,10 @@
 				        $("#PM25").text($(data).find("environment pm25").get(0).innerText);
 				        $("#pm25Exp").text($(data).find("environment suggest").get(0).innerText);
 				        $("#zz_aqi_level").text($(data).find("environment quality").get(0).innerText);
+				        $("#weather").text($(data).find("forecast weather day type").get(0).innerText);
+					       $("#heigh_wtr").text($(data).find("forecast weather high").get(0).innerText);
+				        $("#low_wtr").text($(data).find("forecast weather low").get(0).innerText);			        
+				        $("#time_s").text($(data).find("updatetime").get(0).innerText);
 				    }
 				});				
 			}
@@ -151,4 +159,24 @@
 	$(function(){
 		Weather.init();
 	});
+		Date.prototype.Format = function (fmt) { //author: meizz 
+    var o = {
+        "M+": this.getMonth() + 1, //月份 
+        "d+": this.getDate(), //日 
+        "h+": this.getHours(), //小时 
+        "m+": this.getMinutes(), //分 
+        "s+": this.getSeconds(), //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+};
+$(document).ready(function(){
+	var timer=new Date().Format("yyyy-MM-dd");
+	console.log(timer);
+	$("#time_ymd").html(timer);
+})
 </script>
