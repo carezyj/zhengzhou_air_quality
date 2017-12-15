@@ -380,7 +380,7 @@ transform:rotateY(360deg);
 }
 /*page3*/
 .maintop_contain{
-	width: 900px;
+	width: 920px;
 	height: 460px;
 	margin:0 auto;
 	overflow: hidden;
@@ -388,7 +388,7 @@ transform:rotateY(360deg);
 .zz_loc{
 	font-size: 25px;
 	color:rgb(0,109,44) ;
-	margin: 70px 0px 70px 5px;
+	margin: 70px 0px 50px 5px;
 }
 .zz_aqi{
 	overflow: hidden;
@@ -412,6 +412,10 @@ transform:rotateY(360deg);
 .maincontain_left{
 	float: left;
 	width: 300px;
+	margin-right: 20px;
+}
+#pm25Exp{
+	line-height: 20px;
 }
 .maincontain_right{
 	position: relative;
@@ -426,7 +430,10 @@ transform:rotateY(360deg);
 	height: 460px;
 	background: url(../img/shanpo.png) 105% 140%/50% no-repeat,/*x y轴*/
 	            url(../img/cao.png)90% 103% repeat-x,
-	            url(../img/xiongmao1.png)0% 93% no-repeat;}
+	            url(../img/xiongmao1.png)0% 93% no-repeat;
+ margin-left: 10px;
+}
+
 .yunduo1{
 	position: absolute;
 	width: 120px;

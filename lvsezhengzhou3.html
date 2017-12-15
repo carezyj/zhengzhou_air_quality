@@ -66,13 +66,13 @@
   			<div class="zz_aqi">
   				<a class="zz_aqi_num" href="" id="AQI"></a>
   				<p class="zz_aqi_right">
-  					<span class="zz_aqi_level">良</span><br />
+  					<span id="zz_aqi_level"></span><br />
   					<span class="zz_aqi_tip">AQI指数</span>
   				</p>
   			</div><!--zz_aqi结束-->
   			<div class="zz_pm">
   				<p>PM2.5浓度：<span id="PM25"></span>微克/立方米</p><br />
-  				<p>目前城市排名 264</p>
+  				<p><span id="pm25Exp"></span></p>
   			</div>
   			</div><!--maincontain_left结束-->
   			<div class="maincontain_right">
@@ -121,27 +121,30 @@
 </html>
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>
-	var Weather=function(){
+	var Weather=function(){                                       
 		var cityName="郑州市";
 		return {
 			init:function(){
 				var that=this;
-				this.initWeather(cityName);
-				setInterval(function(){that.initWeather(cityName);},3000);
+				var loop=function(){
+					that.initWeather(cityName);
+				}
+				loop();
+				setInterval(loop,3000);//每隔三秒钟调用一次匿名函数
 			},
-			initWeather:function(cityName){
+			initWeather:function(cityName){	
 				$("#cityName").text(cityName);
 				$.ajax({
 				    url: "http://wthrcdn.etouch.cn/WeatherApi?city="+encodeURI(cityName),
 				    dataType: "text",
 				    success: function (data) {
-				       // console.log(data)
-				       
+				        //console.log(data)				       
 				        $("#AQI").text($(data).find("environment aqi").get(0).innerText);
 				        $("#PM25").text($(data).find("environment pm25").get(0).innerText);
+				        $("#pm25Exp").text($(data).find("environment suggest").get(0).innerText);
+				        $("#zz_aqi_level").text($(data).find("environment quality").get(0).innerText);
 				    }
-				});
-				
+				});				
 			}
 		}
 	}();
