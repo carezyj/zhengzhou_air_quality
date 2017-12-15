@@ -125,16 +125,39 @@
 </html>
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>
+	Date.prototype.Format = function (fmt) { //author: meizz 
+	    var o = {
+	        "M+": this.getMonth() + 1, //月份 
+	        "d+": this.getDate(), //日 
+	        "h+": this.getHours(), //小时 
+	        "m+": this.getMinutes(), //分 
+	        "s+": this.getSeconds(), //秒 
+	        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+	        "S": this.getMilliseconds() //毫秒 
+	    };
+	    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+	    for (var k in o)
+	    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+	    return fmt;
+	};
 	var Weather=function(){                                       
 		var cityName="郑州市";
 		return {
 			init:function(){
+				//初始化天气
 				var that=this;
 				var loop=function(){
 					that.initWeather(cityName);
 				}
 				loop();
 				setInterval(loop,20000);//每隔三秒钟调用一次匿名函数
+				
+				//初始化日期
+				this.initTime();
+			},
+			initTime:function(){
+				var timer=new Date().Format("yyyy-MM-dd");
+				$("#time_ymd").html(timer);
 			},
 			initWeather:function(cityName){	
 				$("#cityName").text(cityName);
@@ -159,24 +182,4 @@
 	$(function(){
 		Weather.init();
 	});
-		Date.prototype.Format = function (fmt) { //author: meizz 
-    var o = {
-        "M+": this.getMonth() + 1, //月份 
-        "d+": this.getDate(), //日 
-        "h+": this.getHours(), //小时 
-        "m+": this.getMinutes(), //分 
-        "s+": this.getSeconds(), //秒 
-        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
-        "S": this.getMilliseconds() //毫秒 
-    };
-    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-    for (var k in o)
-    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-    return fmt;
-};
-$(document).ready(function(){
-	var timer=new Date().Format("yyyy-MM-dd");
-	console.log(timer);
-	$("#time_ymd").html(timer);
-})
 </script>
