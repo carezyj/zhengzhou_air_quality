@@ -8,7 +8,7 @@
       	var index = 1;
       	var len = 5;
       	var animated = false;
-      	var interval = 3000;
+      	var interval = 4000;
       	var timer;
        //console.log(screen.width);屏幕宽1920px
       	function animate(offset) {

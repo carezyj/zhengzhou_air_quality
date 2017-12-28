@@ -77,8 +77,10 @@
     <a href="javascript:;" id="next" class="arrow">&gt;</a>
   	</div><!--main_top结束-->
   	<div class="main_middle">
-  		<div class="middle_text"><h1>2017郑州市空气质量柱状图</h1><br/><a>http://www.pm25.in/rank</a></div>
+  		<div class="middle_fst">
+  	  <select id="sel_aqi_days"></select>
   	<div id="container1" style="height:350px;width:480px;"></div>
+  	</div><!--middle_fst结束-->
   	<div id="container2" style="height: 350px;width: 480px;"></div>
   	<div id="container3" style="height: 350px;width: 480px;"></div>
    </div>
@@ -129,3 +131,27 @@
 <script src="js/echarts.js"></script>
 <script type="text/javascript" src="js/example2-lunbo.js"></script>
 <script type="text/javascript" src="js/example2-echarts.js"></script>
+<script>
+	$.ajax({
+   		type:"get",
+   		url:"http://127.0.0.1/demo/PHP/lvsezhengzhou.php",
+   		async:false,
+   		data:{},
+   		dataType:"json",
+   		success:function(arr){
+   			var newary=arr.slice(arr.length-4,arr.length);
+      console.log(newary);
+	     var date=new Date;
+      var year=date.getFullYear(); //获取当前年      
+      $.each(newary, function(i,e) {//遍历数组，并将值插入select元素里   
+      	if(e==year){
+      	$("#sel_aqi_days").append("<option selected='selected'>"+e+"</option>");}
+      	else{
+      	$("#sel_aqi_days").append("<option>"+e+"</option>");}
+      });
+   		},
+   		error:function(XMLHttpRequest,textStatus, errorThrown) { 
+     // alert(errorThrown);
+    }
+   })  
+</script>

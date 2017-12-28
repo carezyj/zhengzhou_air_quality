@@ -5,6 +5,7 @@
 		<meta name="viewport"content="width=device-width, initial-scale=1"/>
 		<title>空气质量分析</title>
 		<link type="text/css" rel="stylesheet" href="css/lvsezhengzhou1.css"/>
+			<link type="text/css" rel="stylesheet" href="css/page3.css"/>
 	</head>
 	<body>
 		<div class="all">
@@ -87,6 +88,81 @@
   			</div><!--maincontain_right结束-->
   		</div><!--maintop_contain结束-->
    </div><!--main_top结束-->
+   <div class="main_middle_3" id="main_middle">
+   	<div class="index_main">
+   	<div class="shenghuo">
+   		<p id="sh_tt" class="shenghuo_title">今日生活指南</p>
+   		<ul class="shenghuo_details">
+   			<li class="shenghuo_yund">
+   			<!--	鼠标移入li标签显示这个div-->
+   			<div class="shenghuo_yund_hover" style="display: none;">
+   				<p class="shenghuo_yund_hover_title"></p>
+   				<p class="shenghuo_yund_hover_content"></p>
+   			</div>
+   				<dl>
+   					<dt>
+   						<i></i>
+   					</dt>
+   					<dd>运动指数</dd>
+   				</dl>
+   			</li>
+   			<li class="shenghuo_chuany">
+   			<!--	鼠标移入li标签显示这个div-->
+   			<div class="shenghuo_chuany_hover" style="display: none;">
+   				<p class="shenghuo_chuany_hover_title"></p>
+   				<p class="shenghuo_chuany_hover_content"></p>
+   			</div>
+   				<dl>
+   					<dt>
+   						<i></i>
+   					</dt>
+   					<dd>穿衣指数</dd>
+   				</dl>
+   			</li>
+   			<li class="shenghuo_ganm">
+   			<!--	鼠标移入li标签显示这个div-->
+   			<div class="shenghuo_ganm_hover" style="display: none;">
+   				<p class="shenghuo_ganm_hover_title"></p>
+   				<p class="shenghuo_ganm_hover_content"></p>
+   			</div>   				
+   				<dl>
+   					<dt>
+   						<i></i>
+   					</dt>
+   					<dd>感冒指数</dd>
+   				</dl>
+   			</li>
+   			<li class="shenghuo_shushid">
+   			<!--	鼠标移入li标签显示这个div-->
+   			<div class="shenghuo_shushid_hover" style="display: none;">
+   				<p class="shenghuo_shushid_hover_title"></p>
+   				<p class="shenghuo_shushid_hover_content"></p>
+   			</div>   				
+   				<dl>
+   					<dt>
+   						<i></i>
+   					</dt>
+   					<dd>舒适度</dd>
+   				</dl>
+   			</li>
+   			<li class="shenghuo_ziwaix">
+   			<!--	鼠标移入li标签显示这个div-->
+   			<div class="shenghuo_ziwaix_hover" style="display: none;">
+   				<p class="shenghuo_ziwaix_hover_title"></p>
+   				<p class="shenghuo_ziwaix_hover_content"></p>
+   			</div>     				
+   				<dl>
+   					<dt>
+   						<i></i>
+   					</dt>
+   					<dd>紫外线指数</dd>
+   				</dl>
+   			</li>
+   		</ul>
+   	</div><!--shenghuo结束-->
+   </div><!--index_main结束-->
+  </div><!--main_middle结束-->
+  </div><!--main结束-->
     <!--页面尾部-->
   <div class="foot">
   <div class="footer">
@@ -173,6 +249,16 @@
 					       $("#heigh_wtr").text($(data).find("forecast weather high").get(0).innerText);
 				        $("#low_wtr").text($(data).find("forecast weather low").get(0).innerText);			        
 				        $("#time_s").text($(data).find("updatetime").get(0).innerText);
+				        $(".shenghuo_yund_hover_title").text($(data).find("zhishu value").get(8).innerText);
+				        $(".shenghuo_yund_hover_content").text($(data).find("zhishu detail").get(8).innerText);
+				        $(".shenghuo_chuany_hover_title").text($(data).find("zhishu value").get(2).innerText);
+				        $(".shenghuo_chuany_hover_content").text($(data).find("zhishu detail").get(2).innerText);
+				        $(".shenghuo_ganm_hover_title").text($(data).find("zhishu value").get(3).innerText);
+				        $(".shenghuo_ganm_hover_content").text($(data).find("zhishu detail").get(3).innerText);
+				        $(".shenghuo_shushid_hover_title").text($(data).find("zhishu value").get(1).innerText);
+				        $(".shenghuo_shushid_hover_content").text($(data).find("zhishu detail").get(1).innerText);
+				        $(".shenghuo_ziwaix_hover_title").text($(data).find("zhishu value").get(6).innerText);
+				        $(".shenghuo_ziwaix_hover_content").text($(data).find("zhishu detail").get(6).innerText);
 				    }
 				});				
 			}
@@ -181,4 +267,30 @@
 	$(function(){
 		Weather.init();
 	});
+	//鼠标滑动到li标签上的时候显示指定div
+	$(".shenghuo_yund").mouseover(function(){
+		$(".shenghuo_yund_hover").show();
+	}).mouseout(function(){
+		$(".shenghuo_yund_hover").hide();
+	})
+	$(".shenghuo_chuany").mouseover(function(){
+		$(".shenghuo_chuany_hover").show();
+	}).mouseout(function(){
+		$(".shenghuo_chuany_hover").hide();
+	})
+		$(".shenghuo_ganm").mouseover(function(){
+		$(".shenghuo_ganm_hover").show();
+	}).mouseout(function(){
+		$(".shenghuo_ganm_hover").hide();
+	})
+		$(".shenghuo_shushid").mouseover(function(){
+		$(".shenghuo_shushid_hover").show();
+	}).mouseout(function(){
+		$(".shenghuo_shushid_hover").hide();
+	})
+		$(".shenghuo_ziwaix").mouseover(function(){
+		$(".shenghuo_ziwaix_hover").show();
+	}).mouseout(function(){
+		$(".shenghuo_ziwaix_hover").hide();
+	})
 </script>
