@@ -218,6 +218,7 @@
 	};
 	var Weather=function(){                                       
 		var cityName="郑州市";
+		var hoverClasses=['shenghuo_yund','shenghuo_chuany','shenghuo_ganm','shenghuo_shushid','shenghuo_ziwaix'];
 		return {
 			init:function(){
 				//初始化天气
@@ -229,10 +230,22 @@
 				setInterval(loop,3000);//每隔三秒钟调用一次匿名函数				
 				//初始化日期
 				this.initTime();
+				$.each(hoverClasses,function(i,e){
+					that.initHover(e);
+				});
 			},
 			initTime:function(){
 				var timer=new Date().Format("yyyy-MM-dd");
 				$("#time_ymd").html(timer);
+			},
+			initHover:function(className){
+				$('.'+className).hover(
+					  function () {
+					    $("."+className+"_hover").show();
+					  },function () {
+					    $("."+className+"_hover").hide();
+					  }
+				);
 			},
 			initWeather:function(cityName){	
 				$("#cityName").text(cityName);
@@ -267,30 +280,4 @@
 	$(function(){
 		Weather.init();
 	});
-	//鼠标滑动到li标签上的时候显示指定div
-	$(".shenghuo_yund").mouseover(function(){
-		$(".shenghuo_yund_hover").show();
-	}).mouseout(function(){
-		$(".shenghuo_yund_hover").hide();
-	})
-	$(".shenghuo_chuany").mouseover(function(){
-		$(".shenghuo_chuany_hover").show();
-	}).mouseout(function(){
-		$(".shenghuo_chuany_hover").hide();
-	})
-		$(".shenghuo_ganm").mouseover(function(){
-		$(".shenghuo_ganm_hover").show();
-	}).mouseout(function(){
-		$(".shenghuo_ganm_hover").hide();
-	})
-		$(".shenghuo_shushid").mouseover(function(){
-		$(".shenghuo_shushid_hover").show();
-	}).mouseout(function(){
-		$(".shenghuo_shushid_hover").hide();
-	})
-		$(".shenghuo_ziwaix").mouseover(function(){
-		$(".shenghuo_ziwaix_hover").show();
-	}).mouseout(function(){
-		$(".shenghuo_ziwaix_hover").hide();
-	})
 </script>
