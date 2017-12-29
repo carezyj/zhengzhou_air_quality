@@ -8,7 +8,7 @@
    function arrtest(){
    	$.ajax({
    		type:"post",
-   		url:"http://127.0.0.1/demo/PHP/lvsezhengzhou.php",
+   		url:"http://127.0.0.1/www-zhengzhou-air/php/lvsezhengzhou.php",
    		async:false,
    		data:{},
    		dataType:"json",
