@@ -1,5 +1,5 @@
-		//页面加载完毕后加载js
-		var onload2=function(){
+		 //页面加载完毕后加载js
+		 var onload2=function(){
 			//图一
 			var myChart=echarts.init(document.getElementById('container1'));
    //myChart.showLoading({text:'正在努力的读取数据中...'});
@@ -31,14 +31,14 @@
 							newary_17.push(arr[i]);
 						}
 						}
-      console.log(newary_14);
+     console.log(newary_14);
   			if(newary_17){
-   				for(var i=0;i<newary_17.length;i++){
-   				arr1.push(newary_17[i].quality_17);
-   				arr2.push(newary_17[i].aqi_days_17);
-   				}
-   				arr3.push(newary_17[0].year_17);
-   		}
+   			 	for(var i=0;i<newary_17.length;i++){
+   				 arr1.push(newary_17[i].quality_17);
+   				 arr2.push(newary_17[i].aqi_days_17);
+   				 }
+   				 arr3.push(newary_17[0].year_17);
+   	 }
      if(newary_14){
    				for(var i=0;i<newary_14.length;i++){
    				arr4.push(newary_14[i].quality_14);
@@ -60,61 +60,58 @@
    				}	
    				arr12.push(newary_16[0].year_16);
    		}
-   		}
-   	})
+   	}
+   })
    	return arr1,arr2,arr3,arr4,arr5,arr6,
    	       arr7,arr8,arr9,arr10,arr11,arr12;
    }
    arrtest();
    function pic(a,b,c){
-   var option = {
-				title:{
+    var option = {
+			 	title:{
 				 text:c+'年郑州AQI柱状图',
 				//subtext:'http://www.pm2.5.in',//副标签
 					//sublink:'http://www.pm2.5.in',//副标题链接
 					//left:'center',
-					textStyle:{
+			 	textStyle:{
 						color:'rgba(0,0,0,0.8)',
 						fontSize:16,
 						lineHeight:16
 					},
-					subtextStyle:{
+				 subtextStyle:{
 						padding:0,//标题内边距
 						//itemGap:100,//主副标题之间的距离
 						fontSize:15,
 						borderColor:'red'
 					}
-					},
-					
-					tooltip:{
+				 },					
+				 tooltip:{
 					trigger:'axis'//坐标轴触发提示项
-				},	
-				//图例组件
-				//工具栏
-					toolbox:{
-					show:true,
-					feature:{
+				 },	
+				 //图例组件
+				 //工具栏
+			 	toolbox:{
+					 show:true,
+				 	feature:{
 						mark:{show:true},
 						dataView:{show:true,readyOnly:false},//展现当前图表所用数据
 						magicType:{show:true,type:['bar','line']},//动态类型切换
 						restore:{show:true},//配置项还原
 						saveAsImage:{show:true}					
-					}
+					 }
 					},
 					//直角坐标系在grid中的x轴
-				xAxis:[{
+			 	xAxis:[{
 					//data:["优","良","轻度污染","中度污染","重度污染","严重污染"]
-
              type: 'category',
              	data: a
-       }
-       ],
-				//直角坐标系在grid中的y轴
-				yAxis:{
+    }],
+				 //直角坐标系在grid中的y轴
+				 yAxis:{
 					name:'AQI天数（天）'
 				},
-				//系列列表
-				series:[{
+				 //系列列表
+				 series:[{
 					name:'AQI天数',
 					type:'bar',
 					data:b,
@@ -136,36 +133,37 @@
 								shadowBlur:200,
 								shadowColor:'rgba(237,248,233,0.8)'
 							}
-						}
+				 }
 				}],
-				//全局文本设置
-				textStyle:{
+				 //全局文本设置
+			 	textStyle:{
 					color:'rgba(0,0,0,0.6)'
 				},
-				//设置标签的视觉引导线颜色
-			 labelLine:{
+				 //设置标签的视觉引导线颜色
+			  labelLine:{
 			 	normal:{
 			 		lineStyle:{
 			 			color:'rgba(255,255,255,0.3)'
 			 		}
 			 	}
 			 }
-		};			 
-		 myChart.setOption(option);}
+		  };			 
+		  myChart.setOption(option);
+   }
    pic(arr1,arr2,arr3);
    //pic(arr4,arr5,arr6);
-  $("#sel_aqi_days").change(function(){
-		var item=$("#sel_aqi_days").val();
-  if(item=="2014"){
-	  pic(arr4,arr5,arr6);
-  }else if(item=="2015"){
-	 pic(arr7,arr8,arr9);
-  }else if(item=="2016"){
-	 pic(arr10,arr11,arr12);
-  }else{
-	 pic(arr1,arr2,arr3);;
-  }
-	 });
+   $("#sel_aqi_days").change(function(){
+		 var item=$("#sel_aqi_days").val();
+   if(item=="2014"){
+	    pic(arr4,arr5,arr6);
+   }else if(item=="2015"){
+	    pic(arr7,arr8,arr9);
+   }else if(item=="2016"){
+	    pic(arr10,arr11,arr12);
+   }else{
+	    pic(arr1,arr2,arr3);;
+   }
+	  });
 	/*	 //图二
 		 var myChart=echarts.init(document.getElementById('container2'));
 			var option = {
