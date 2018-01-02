@@ -215,7 +215,7 @@ ul.shenghuo_details li.shenghuo_ziwaix dl dt i{
 	height: 130px;
 	padding: 5px 15px;
 	overflow: hidden;
-	background-color: rgb(117,112,179);
+	background-color: rgb(117,112,179); /*背景紫*/
 	color: #EFEFEF;
 	border-radius:10px;
 -moz-border-radius:25px; /* Old Firefox */
@@ -239,4 +239,42 @@ ul.shenghuo_details li.shenghuo_ziwaix dl dt i{
 	font-size: 12px;	
 	line-height: 20px;
 	padding:5px 0px;
+}
+.air_fenxi{
+	width: 670px;
+	height: 230px;
+	margin-top: 20px;
+	border: 1px solid #e7e7e7;/*边框灰*/
+}
+.air_fenxi_title{
+	font-size: 18px;
+	font-weight: bold;
+	color: #888;
+	text-indent:20px;/*将段落第一行缩进20像素*/
+ height:60px;
+ line-height: 60px;
+}
+.air_fenxi_left{
+	float: left;
+	display: inline;
+	width: 220px;
+	margin-left: 20px;
+	position: relative;
+	margin-top: 5px;
+}
+.air_fenxi_left_img{
+	overflow: hidden;
+}
+.air_fenxi_left a img{
+	width: 195px;
+}
+.air_fenxi_right{
+	padding-right: 15px;
+}
+.air_fenxi_right_up_title{
+	font-size: 18px;
+	color: rgb(129,15,124);
+}
+.air_fenxi_right_up_info{
+	color: #888 ;  /* 字体灰*/
 }
